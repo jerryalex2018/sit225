@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="grid-layout">
+
+        <nav id="nav-sec">
+        <ul>
+            <li>
+                <span class="logo">Logo</span>
+                <button id="togglebtn" >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"/></svg>
+                </button>
+            
+            </li>
+
+                        <li>
+<a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+                <span>Home</span>
+            </a>
+            </li>
+
+
+
+            <li>
+                <!-- <i class="fa-solid fa-user-plus"></i> -->
+                <a href="register.html">
+                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18q30 0 58.5 3t55.5 9l-70 70q-11-2-21.5-2H400q-71 0-127.5 17T180-306q-9 5-14.5 14t-5.5 20v32h250l80 80H80Zm542 16L484-282l56-56 82 82 202-202 56 56-258 258ZM287-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47Zm123 287Zm46.5-343.5Q480-607 480-640t-23.5-56.5Q433-720 400-720t-56.5 23.5Q320-673 320-640t23.5 56.5Q367-560 400-560t56.5-23.5ZM400-640Z"/></svg>
+
+                <span>Register</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                    <span>delete student</span>
+                </a>
+            </li>
+            <li>
+                <a href="clock.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M339.5-108.5q-65.5-28.5-114-77t-77-114Q120-365 120-440t28.5-140.5q28.5-65.5 77-114t114-77Q405-800 480-800t140.5 28.5q65.5 28.5 114 77t77 114Q840-515 840-440t-28.5 140.5q-28.5 65.5-77 114t-114 77Q555-80 480-80t-140.5-28.5ZM480-440Zm112 168 56-56-128-128v-184h-80v216l152 152ZM224-866l56 56-170 170-56-56 170-170Zm512 0 170 170-56 56-170-170 56-56ZM480-160q117 0 198.5-81.5T760-440q0-117-81.5-198.5T480-720q-117 0-198.5 81.5T200-440q0 117 81.5 198.5T480-160Z"/></svg>
+                    <span>digital clock</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    
+   <main class="form-staff">
+     <div class="form-container">
+        <h2>registration form</h2>
+
+        <form class="fom" id="formm">
+        
+             <div class="details">
+            <label for="nami" >Registration Number</label>
+            <input type="text" id="nami" required placeholder= "Registration Number" >
+        </div>
+        <div class="details">
+            <label for="nemi">Full Name</label>
+            <input type="text" id="nemi" required>
+        </div>
+        <div class="details">
+            <label for="numi">cat marks</label>
+            <input type="text" id="numi" required>
+        </div>
+        <div class="details">
+            <label for="nimi">Exam</label>
+            <input type="text" id="nimi" required>
+        </div>
+
+        <button type="submit" id="submit-btn"> Submit</button>
+       
+    </form>
+
+    </div>
+   </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
