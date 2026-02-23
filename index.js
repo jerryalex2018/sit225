@@ -63,16 +63,38 @@ if(formEl){
 
 
         // in the block of code below , an object is created from the form data submited
+        
+          const cut = parseFloat(document.getElementById("numi").value) ;
+        const exum = parseFloat(document.getElementById("nimi").value) ;
+        let total = cut + exum
+        function calculateGrade(totol){
+            if(totol>= 70 && totol <=100){
+                return "A"
+            }else if(totol>=60 && totol< 70){
+                return "B"
+            }else if(totol>=50 && totol<60){
+                return "c"
+            }else if(totol>=40 && totol<50){
+                return "D"
+            }else{
+                return "Fail"
+            }
+            
+        }
+    
 
         const stude = {
             rank: studentData.length + 1,
             name: document.getElementById("nemi").value,
             registrationNumber: document.getElementById("nami").value,
-            cat: document.getElementById("numi").value,
-            exam: document.getElementById("nimi").value
+            cat: cut,
+            exam: exum,
+            Total: total,
+            Grade: calculateGrade(total)
 
 
         }
+        console.log(stude)
 
         //the object is now pushed to the array studentData
         studentData.push(stude);
@@ -86,7 +108,7 @@ localStorage.setItem(("students"),JSON.stringify(studentData))
 
         //calling the function that creates a table of the student data
 
-        // studentdisplay()
+        studentdisplay()
     })
 }
 
@@ -118,18 +140,27 @@ if(studentDetailsEl){
 <th>Registration N.o</th>
 <th>Cat</th>
 <th>Exam</th>
+<th>Total</th>
+<th>Grade</th>
 </tr>
 </thead>
 
 <tbody>
-${studentData.map(studi => `
+${studentData.map((studi,index) => `
    
 <tr>
-<td> ${studi.rank}</td>
+<td> ${index+1}</td>
 <td> ${studi.name}</td>
-<td> ${studi. registrationNumber}</td>
+<td> ${studi.registrationNumber}</td>
 <td> ${studi.cat}</td>
 <td> ${studi.exam}</td>
+<td> ${studi.Total}</td>
+<td> ${studi.Grade}</td>
+<td>
+<button class = "delete-btn" data-index = "${index}">
+Delete
+</button>
+</td>
 </tr>
 
     `).join("")}
@@ -144,3 +175,19 @@ ${studentData.map(studi => `
 
 }
 studentdisplay()
+
+document.addEventListener("click",function(e){
+
+    if(e.target.classList.contains("delete-btn")){
+        const index = e.target.dataset.index;
+
+                studentData.splice(index, 1);
+
+                        localStorage.setItem("students", JSON.stringify(studentData));
+
+studentdisplay()
+
+
+    }
+
+})
