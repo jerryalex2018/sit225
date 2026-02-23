@@ -6,13 +6,13 @@
 
 body.grid-layout{
     display: grid;
-    grid-template-columns: auto 1fr;
-    background:rgb(139, 135, 122);
+    grid-template-columns: auto auto 1fr;
+    background:#ecebe6;
 }
 
 nav{
     width: 250px;
-    background-color: rgb(101, 89, 41);
+    background-color:#c8c5bb;
     height: 100vh;
     padding: 5px 1em;
     position: sticky;
@@ -66,12 +66,14 @@ nav ul{
     font-family: "Orbitron", sanserif;
  }
 .student-details{
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 25px;
     gap: 10px;
+    grid-column: 3;
+    grid-row: 1;
 }
 
 
@@ -80,13 +82,16 @@ nav ul{
     display: flex;
     justify-content: center;
     align-items: center; 
+    grid-column: 3;
+
 
 }
 
 .form-container{
     max-width: 400px;
     background-color: aliceblue;
-    grid-column: 2;
+    
+    /* grid-row: 1; */
 
     /* display: flex;
     justify-content: center;
@@ -139,31 +144,50 @@ input:focus{
     transform:translatey(-2px);
     box-shadow : 0 5px 20px rgba(11, 50, 221, 0.4);
 }
-section{
+section.clock-layout{
     grid-column: 2;
     display: flex;
-    background: orangered;
-    width: 100%;
+    /* background: orangered; */
+    /* width: 200px; */
     padding: 10px;
     gap: 5px;
-    height: 100vh;
-    display: flex;
+    /* height: 100vh; */
+    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
 article{
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     box-shadow: 0 5px 12px rgba(100,100,100,.9);
     padding: 20px 20px;
     gap: 10px;
     border-radius: 10px;
+    width:200px;
+    height: 200px;
     
 }
-.hours,.minutes, .seconds, .ampm{
-    font-size: 48px;
+.hours,.minutes, .seconds, .ampm, .average, .perfoming-student{
+    font-size: 20px;
     color: #20c20e;
-    font-family: "Orbitron";
+    padding: 12px;
+    font-weight: 1000;
+    /* width:2ch; */
+    font-family: "Orbitron",monospace;
+}
+.ampm, .hours,.minutes, .seconds, .ampm{width:2ch;}
+.average, .perfoming-student{
+     background-color: white;
+    box-shadow: 0 5px 12px rgba(100,100,100,.9);
+    border-radius: 10px;
+    color: black;
+
+}
+
+#topName, #topReg{
+    color: orangered;
 }
 
 #togglebtn{
@@ -177,4 +201,64 @@ svg{
 }
 .rotate svg{
     rotate: 180deg;
+}
+
+#studentFuctionality{
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    align-self: self-start;
+    grid-row: 1;
+}
+
+.perfoming-student, .average{
+    background-color: white;
+    width: 200px;
+    height: 200px;
+}
+
+
+
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f4f4f4;
+}
+
+th, td {
+    padding: 10px 12px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background: #fafafa;
+}
+
+tbody tr:hover {
+    background: #f0f0f0;
+}
+
+
+
+.delete-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.delete-btn:hover {
+    background: black;
 }

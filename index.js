@@ -109,6 +109,7 @@ localStorage.setItem(("students"),JSON.stringify(studentData))
         //calling the function that creates a table of the student data
 
         studentdisplay()
+        updateStudentStats();
     })
 }
 
@@ -142,6 +143,7 @@ if(studentDetailsEl){
 <th>Exam</th>
 <th>Total</th>
 <th>Grade</th>
+<th>Clear</th>
 </tr>
 </thead>
 
@@ -175,6 +177,8 @@ Delete
 
 }
 studentdisplay()
+updateStudentStats();
+
 
 document.addEventListener("click",function(e){
 
@@ -186,8 +190,42 @@ document.addEventListener("click",function(e){
                         localStorage.setItem("students", JSON.stringify(studentData));
 
 studentdisplay()
+updateStudentStats();
 
 
     }
 
 })
+
+
+function updateStudentStats() {
+    const avgEl = document.getElementById("averageValue");
+    const topNameEl = document.getElementById("topName");
+    const topRegEl = document.getElementById("topReg");
+
+    if (!avgEl || !topNameEl || !topRegEl) return;
+
+    if (studentData.length === 0) {
+        avgEl.textContent = "0";
+        topNameEl.textContent = "name";
+        topRegEl.textContent = "registration number";
+        return;
+    }
+
+    //  Calculate average
+    const totalMarks = studentData.reduce((sum, stud) => sum + stud.Total, 0);
+    const average = (totalMarks / studentData.length).toFixed(1);
+    avgEl.textContent = average;
+
+    //  Find best performing student
+    let topStudent = studentData[0];
+
+    studentData.forEach(stud => {
+        if (stud.Total > topStudent.Total) {
+            topStudent = stud;
+        }
+    });
+
+    topNameEl.textContent = topStudent.name;
+    topRegEl.textContent = topStudent.registrationNumber;
+}
