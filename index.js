@@ -95,6 +95,13 @@ if(formEl){
 
         }
         console.log(stude)
+        if(stude.cat <0 || stude.cat >30){
+            alert("invalid, try a valid range")
+            return
+        }else if(stude.exam <0 || stude.exam>70){
+            alert("invalid, try a valid range")
+return
+        }
 
         //the object is now pushed to the array studentData
         studentData.push(stude);
